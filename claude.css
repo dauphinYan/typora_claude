@@ -1986,4 +1986,18 @@ li > .outline-item:hover::before,
     height: calc(100% - var(--title-bar-height, 28px) - 30px) !important;
 }
 
+/* macOS 顶部已有交通灯避让，隐藏额外的 Files/Outline 胶囊控件以避免和筛选栏重叠 */
+.mac-os .info-panel-tab-wrapper,
+.mac-seamless-mode .info-panel-tab-wrapper {
+    display: none !important;
+}
 
+.mac-os #typora-sidebar .sidebar-content,
+.mac-seamless-mode #typora-sidebar .sidebar-content {
+    top: 24px !important;
+}
+
+.mac-os #file-library-search-panel,
+.mac-seamless-mode #file-library-search-panel {
+    top: 0 !important;
+}
