@@ -1888,3 +1888,19 @@ li > .outline-item:hover::before,
     margin-top: calc(var(--title-bar-height, 28px) + 15px) !important;
     height: calc(100% - var(--title-bar-height, 28px) - 30px) !important;
 }
+
+/* macOS already reserves room for traffic lights; hide the extra Files/Outline pill to prevent overlap. */
+.mac-os .info-panel-tab-wrapper,
+.mac-seamless-mode .info-panel-tab-wrapper {
+    display: none !important;
+}
+
+.mac-os #typora-sidebar .sidebar-content,
+.mac-seamless-mode #typora-sidebar .sidebar-content {
+    top: 24px !important;
+}
+
+.mac-os #file-library-search-panel,
+.mac-seamless-mode #file-library-search-panel {
+    top: 0 !important;
+}
