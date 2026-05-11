@@ -2,8 +2,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$Version,
 
-    [Parameter(Mandatory = $true)]
-    [string]$ZipPath,
+    [string]$ZipPath = "",
 
     [string]$NotesPath = ".\更新内容.md",
     [string]$Repo = "",
@@ -73,6 +72,36 @@ function Get-RepoFromOrigin {
     throw "Cannot parse GitHub repo from origin: $remote. Pass -Repo owner/name."
 }
 
+function New-ReleaseZip {
+    param(
+        [string]$RepoRoot,
+        [string]$Destination
+    )
+
+    $stagingRoot = Join-Path $env:TEMP ("claude-typora-package-" + [guid]::NewGuid().ToString("N"))
+    New-Item -ItemType Directory -Path $stagingRoot | Out-Null
+
+    try {
+        Get-ChildItem -LiteralPath $RepoRoot -Force |
+            Where-Object {
+                $_.Name -ne ".git" -and
+                $_.Name -ne "release.ps1" -and
+                $_.Name -ne "release.bat"
+            } |
+            ForEach-Object {
+                Copy-Item -LiteralPath $_.FullName -Destination $stagingRoot -Recurse -Force
+            }
+
+        if (Test-Path -LiteralPath $Destination) {
+            Remove-Item -LiteralPath $Destination -Force
+        }
+
+        Compress-Archive -Path (Join-Path $stagingRoot "*") -DestinationPath $Destination -Force
+    } finally {
+        Remove-Item -LiteralPath $stagingRoot -Recurse -Force -ErrorAction SilentlyContinue
+    }
+}
+
 $repoRoot = git rev-parse --show-toplevel
 if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($repoRoot)) {
     throw "Run this script inside the git repository."
@@ -92,7 +121,6 @@ if ([string]::IsNullOrWhiteSpace($versionNumber)) {
 $tagName = "v$versionNumber"
 $displayVersion = "V$versionNumber"
 
-$zipFullPath = Resolve-FullPath $ZipPath
 $notesFullPath = Resolve-FullPath $NotesPath
 
 if ([string]::IsNullOrWhiteSpace($Repo)) {
@@ -105,6 +133,14 @@ if ([string]::IsNullOrWhiteSpace($AssetName)) {
 
 if (-not $AssetName.EndsWith(".zip", [System.StringComparison]::OrdinalIgnoreCase)) {
     throw "AssetName must end with .zip"
+}
+
+$assetCopy = Join-Path $env:TEMP $AssetName
+
+if ([string]::IsNullOrWhiteSpace($ZipPath)) {
+    $zipFullPath = $assetCopy
+} else {
+    $zipFullPath = Resolve-FullPath $ZipPath
 }
 
 $gh = Get-Command gh -ErrorAction SilentlyContinue
@@ -121,7 +157,7 @@ Write-Host "Repository: $Repo"
 Write-Host "Tag:        $tagName"
 Write-Host "Title:      $displayVersion"
 Write-Host "Asset:      $AssetName"
-Write-Host "Zip:        $zipFullPath"
+Write-Host "Zip:        $(if ([string]::IsNullOrWhiteSpace($ZipPath)) { 'auto-generated from repository files' } else { $zipFullPath })"
 Write-Host "Notes:      $notesFullPath"
 
 git fetch origin main --tags
@@ -156,9 +192,12 @@ if ($remoteTagExists) {
 $notesOutput = Join-Path $env:TEMP "claude-typora-$tagName-release-notes.md"
 Get-ReleaseNotes -Path $notesFullPath -DisplayVersion $displayVersion | Set-Content -LiteralPath $notesOutput -Encoding UTF8
 
-$assetCopy = Join-Path $env:TEMP $AssetName
 if (-not $DryRun) {
-    Copy-Item -LiteralPath $zipFullPath -Destination $assetCopy -Force
+    if ([string]::IsNullOrWhiteSpace($ZipPath)) {
+        New-ReleaseZip -RepoRoot $repoRoot -Destination $assetCopy
+    } else {
+        Copy-Item -LiteralPath $zipFullPath -Destination $assetCopy -Force
+    }
 }
 
 Invoke-Checked "Stage repository changes" "git add -A"
