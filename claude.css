@@ -9,7 +9,7 @@
 
 * {
     box-sizing: border-box;
-    outline-color: #2c84db;
+    outline-color: #D97757;
 }
 
 *,
@@ -133,17 +133,70 @@ body {
 }
 
 /* 设置界面激活列表项的背景颜色 */
-.pane-sm.sidebar .nav-group-item.active {
+.pane-group .nav-group-item.active {
     background-color: var(--hover-color) !important;
+}
+
+.nav-group-item:active {
+    background-color: var(--hover-color)!important;
+}
+
+.pane-group .nav-group-item {
+    border-radius: 7px!important;
+}
+
+.pane-group .export-detail .input-group-content {
+    border-color: transparent!important;
+}
+
+.export-detail textarea {
+    border-radius: 5px!important;
+    background-color: var(--border-color-30)!important;
+}
+
+.export-detail textarea:focus {
+    border-color: #d97757!important;
+}
+
+.export-items-list .separator {
+    border-color: var(--border-color-30)!important;
 }
 
 /* 导出窗口 */
 .export-detail {
-    background-color: var(--hover-color)!important;
+    background: transparent!important;
 }
 
 .export-item.active {
     background-color: var(--hover-color)!important;
+}
+
+.export-items-list-control {
+    background: none!important;
+}
+
+.pane-sm.sidebar  .search-input {
+    border-color: #D97757!important;
+    border-radius: 20px!important;
+}
+
+.pane-group button.btn-default {
+    border-radius: 5px!important;
+    border-color: var(--border-color-15)!important;
+}
+
+.pane-group button.btn-default:hover {
+    border-color:transparent!important;
+}
+
+.pane-group .input-group-content {
+    padding: 24px 30px 24px 16px!important;
+    border: 1px solid var(--border-color-15)!important;
+    border-radius: 13px!important;
+}
+
+.pane-group .input-group-header-title {
+    color: #d97757 !important;
 }
 
 /* =========================================
@@ -1274,6 +1327,16 @@ a:hover {
     background-clip: padding-box;
 }
 
+#typora-sidebar #sidebar-menu-btn:hover > .sidebar-footer-item,
+#typora-sidebar #sidebar-menu-btn > .sidebar-footer-item:hover,
+#typora-sidebar #sidebar-menu-btn:hover #sidebar-footer-main-item-label,
+#typora-sidebar #sidebar-footer-main-item-label:hover,
+#typora-sidebar #sidebar-menu-btn:hover > .sidebar-footer-item .footer-btn,
+#typora-sidebar #sidebar-menu-btn > .sidebar-footer-item .footer-btn:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
 #sidebar-files-menu {
     background: var(--file-search-list-bg-color) !important;
 }
@@ -1439,7 +1502,7 @@ a:hover {
 }
 
 .info-panel-tab-title:active {
-    transform: translateY(-4px) scale(0.97);
+    transform: translateY(-5px);
 }
 
 .active-tab-files #info-panel-tab-file,
@@ -2507,7 +2570,7 @@ li > .outline-item:hover::before,
 }
 
 .unibody-window .info-panel-tab-title:active {
-    transform: scale(0.97) !important;
+    transform: translateY(0) !important;
 }
 
 /* 一体化顶栏右侧窗口按钮：悬浮时不再改变背景 */
