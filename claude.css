@@ -391,6 +391,10 @@ body {
     background-color: transparent !important;
     border: none !important;
 }
+#file-library::-webkit-scrollbar {
+  width: 0!important;
+  height: 0!important;
+}
 
 /* 去除编辑区底栏的上边框 */
 .show-footer footer.ty-footer {
@@ -2091,9 +2095,9 @@ a:hover {
 }
 
 /* 匹配关键字高亮 */
-.ty-file-search-match-text {
+.ty-search-item-line .ty-file-search-match-text {
     background-color: transparent;
-    color: var(--font-color);
+    color: var(--LOGO-color);
 }
 
 /* 找到文件数的背景 */
@@ -3017,6 +3021,32 @@ li > .outline-item-active::before,
    13. 一体化菜单界面适配
    ========================================= */
 
+/* 修复最近打开文件路径内容溢出 */
+#recent-file-panel {
+    overflow: hidden;
+}
+
+#recent-document-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#recent-document-table th:first-child,
+#recent-document-table td.recent-file-name {
+    width: 40%;
+}
+
+#recent-document-table th:nth-child(2),
+#recent-document-table td.recent-file-dir {
+    width: 60%;
+}
+
+#recent-document-table td.recent-file-dir {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .megamenu-opened header {
     background-image: none!important;;
 }
@@ -3622,4 +3652,20 @@ li > .outline-item-active::before,
     background-color: #FAF9F5 !important;
 }
 
+
+/*------------- 第三方插件适配 ------------*/
+/*1. 文件树计数*/
+.file-node-content:after {
+    background: none!important;
+    border: none!important;
+    color: #8F857C!important;
+}
+/*2. 设置界面配色*/
+.plugin-preferences-mask {
+    --pref-bg-hover:var(--hover-color)!important;
+    --pref-bg-active:var(--LOGO-color)!important;
+    --pref-primary:var(--LOGO-color)!important;
+    --pref-primary-text:var(--LOGO-color)!important;
+    --pref-primary-text:var(--sidebar-font-color)!important;
+}
 

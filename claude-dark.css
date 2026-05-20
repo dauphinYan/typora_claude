@@ -125,6 +125,8 @@ html, body {
     background: transparent !important;
 }
 
+/*----------------  setting  -----------------*/
+
 .pane-group .nav-group-item:active {
     background-color: var(--hover-color)!important;
 }
@@ -430,6 +432,10 @@ body {
 .stopselect.dropmenu.sidebar-menu.open.active-tab-files.use-file-tree-style ::-webkit-scrollbar-thumb {
     background-color: transparent !important;
     border: none !important;
+}
+#file-library::-webkit-scrollbar {
+  width: 0!important;
+  height: 0!important;
 }
 
 .ty-lang-list::-webkit-scrollbar {
@@ -2039,9 +2045,9 @@ a:hover {
     border-bottom: 0;
 }
 
-.ty-file-search-match-text {
+.ty-search-item-line .ty-file-search-match-text {
     background-color: transparent;
-    color: var(--font-color);
+    color: var(--LOGO-color);
 }
 
 .file-list-item-count {
@@ -2916,6 +2922,31 @@ li > .outline-item-active::before,
    13. Integrated Menu Adaptation (mdmdt Scope)
    ========================================= */
 
+#recent-file-panel {
+    overflow: hidden;
+}
+
+#recent-document-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#recent-document-table th:first-child,
+#recent-document-table td.recent-file-name {
+    width: 40%;
+}
+
+#recent-document-table th:nth-child(2),
+#recent-document-table td.recent-file-dir {
+    width: 60%;
+}
+
+#recent-document-table td.recent-file-dir {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .unibody-window {
     --claude-mega-bg: #1f1e1d;
     --claude-mega-bg-soft: rgba(38, 38, 36, 0.94);
@@ -3546,4 +3577,24 @@ li > .outline-item-active::before,
 .typora-fullscreen #w-top-margin {
     background: #262624 !important;
     background-color: #262624 !important;
+}
+
+
+/*------------ chajian ------------*/
+/*1. 文件树计数*/
+.file-node-content:after {
+    background: none!important;
+    border: none!important;
+    color: #8F8C93!important;
+}
+/*2. 设置界面配色*/
+.plugin-preferences-mask {
+    --pref-bg-dialog:#1e1e20!important;
+    --pref-bg-sidebar:#252528!important;
+    --pref-bg-hover:var(--hover-color)!important;
+    --pref-bg-active:var(--LOGO-color)!important;
+    --pref-primary:var(--LOGO-color)!important;
+    --pref-primary-text:var(--sidebar-font-color)!important;
+    --pref-text-main:var(--font-color)!important;
+    --pref-text-sub:var(--sidebar-font-color)!important;
 }
