@@ -5,7 +5,7 @@
 @font-face {
     font-family: "Anthropic Serif Web Text";
     src: url("./claude-fonts/c66fc489e-C-BHYa_K.ttf") format("truetype");
-    font-weight: 100 900;
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -13,7 +13,7 @@
 @font-face {
     font-family: "Anthropic Sans Web Text";
     src: url("./claude-fonts/cc27851ad-CFxw3nG7.ttf") format("truetype");
-    font-weight: 100 900;
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -1958,6 +1958,13 @@ a:hover {
 #file-library-tree
 > .file-tree-node.file-node-root
 > .file-node-children
+> .file-tree-node {
+    --claude-folder-expanded-title-color: #D97757;
+}
+
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
 > .file-tree-node
 > .file-node-content
 > .file-node-icon.fa-folder::before {
@@ -1970,6 +1977,15 @@ a:hover {
 > .file-node-children
 > .file-tree-node
 > .file-node-children
+> .file-tree-node {
+    --claude-folder-expanded-title-color: #C9826F;
+}
+
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-tree-node
+> .file-node-children
 > .file-tree-node
 > .file-node-content
 > .file-node-icon.fa-folder::before {
@@ -1977,6 +1993,17 @@ a:hover {
 }
 
 /* 第 3 层文件夹图标 */
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node {
+    --claude-folder-expanded-title-color: #A98E82;
+}
+
 #file-library-tree
 > .file-tree-node.file-node-root
 > .file-node-children
@@ -2000,10 +2027,30 @@ a:hover {
 > .file-node-children
 > .file-tree-node
 > .file-node-children
+.file-tree-node {
+    --claude-folder-expanded-title-color: #8F8A83;
+}
+
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-children
 .file-tree-node
 > .file-node-content
 > .file-node-icon.fa-folder::before {
     color: #8F8A83 !important;
+}
+
+#file-library-tree
+.file-tree-node.file-node-expanded:not(.file-node-root):not(.file-library-file-node)
+> .file-node-content
+> .file-node-title {
+    color: var(--claude-folder-expanded-title-color) !important;
 }
 
 .fa-folder:before {
@@ -3193,11 +3240,17 @@ li > .outline-item-active::before,
     margin-top: 12px;
 }
 
-.megamenu-menu-panel table tr {
+/* .megamenu-menu-panel table tr {
     cursor: default!important;
-}
+} */
 #recent-document-table {
     cursor: default!important;
+}
+.recent-file-dir {
+    cursor: default!important;
+}
+.recent-file-name {
+    cursor: pointer!important;
 }
 
 .unibody-window .megamenu-menu-panel {
@@ -3331,10 +3384,16 @@ li > .outline-item-active::before,
 .unibody-window #recent-document-table .recent-file-name {
     color: var(--font-color);
     font-weight: 700;
+    transform: translateX(0);
+    transition:
+        color 0.18s ease,
+        text-shadow 0.18s ease,
+        transform 0.2s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .unibody-window #recent-document-table tr:hover td {
-    background: var(--claude-mega-accent-soft) !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
 .unibody-window #theme-preview-grid {
@@ -3548,7 +3607,6 @@ li > .outline-item-active::before,
 .unibody-window #recent-document-table tbody tr,
 .unibody-window #recent-document-table tbody td {
     transition:
-        background-color 0.18s ease,
         color 0.18s ease,
         transform 0.18s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
@@ -3558,8 +3616,14 @@ li > .outline-item-active::before,
 } */
 
 .unibody-window #recent-document-table tbody tr:hover td {
-    background: var(--hover-color) !important;
-    color: var(--font-color) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.unibody-window #recent-document-table tbody td.recent-file-name:hover {
+    color: var(--LOGO-color) !important;
+    text-shadow: 0 4px 14px rgba(217, 119, 87, 0.2);
+    transform: translateX(4px);
 }
 
 .unibody-window #recent-document-table tbody td:first-child {
@@ -3637,12 +3701,14 @@ li > .outline-item-active::before,
 .unibody-window #recent-document-table.table-hover > tbody > tr:hover > td,
 .unibody-window #recent-document-table tbody > tr.recent-file-item:hover,
 .unibody-window #recent-document-table tbody > tr.recent-file-item:hover > td {
-    background: var(--claude-recent-row-hover-bg) !important;
-    background-color: var(--claude-recent-row-hover-bg) !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
-.unibody-window #recent-document-table tbody > tr.recent-file-item:hover .recent-file-name {
-    color: var(--font-color) !important;
+.unibody-window #recent-document-table tbody > tr.recent-file-item .recent-file-name:hover {
+    color: var(--LOGO-color) !important;
+    text-shadow: 0 4px 14px rgba(217, 119, 87, 0.2);
+    transform: translateX(4px);
 }
 
 /* --- Integrated menu interaction trim: non-active hover keeps text motion only --- */
@@ -3674,9 +3740,16 @@ li > .outline-item-active::before,
 .unibody-window #recent-document-table.table-hover > tbody > tr:hover > td,
 .unibody-window #recent-document-table tbody > tr.recent-file-item:hover,
 .unibody-window #recent-document-table tbody > tr.recent-file-item:hover > td,
+.unibody-window #recent-document-table tbody tr:hover,
 .unibody-window #recent-document-table tbody tr:hover td {
-    background: var(--hover-color) !important;
-    background-color: var(--hover-color) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.unibody-window #recent-document-table tbody td.recent-file-name:hover {
+    color: var(--LOGO-color) !important;
+    text-shadow: 0 4px 14px rgba(217, 119, 87, 0.2);
+    transform: translateX(4px);
 }
 
 /* --- Integrated / fullscreen title bar: keep scrolled editor text from showing through --- */
