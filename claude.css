@@ -583,6 +583,13 @@ li.folder-menu-item.file-action-item.selected-folder-menu-item:hover > a {
     color: #131314;
 }
 
+#write code::selection,
+#write code *::selection,
+#write tt::selection,
+#write tt *::selection {
+    color: var(--code-font-color);
+}
+
 /* ---------- Typora 隐藏加粗/斜体星号标记 ---------- */
 
 /* 隐藏点击时展开的前后星号 */
