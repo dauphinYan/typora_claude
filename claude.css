@@ -3882,6 +3882,16 @@ li > .outline-item-active::before,
 /* 源码模式激活行背景 */
 .typora-sourceview-on .CodeMirror-activeline-background {
     background-color: rgba(142, 164, 255, 0.10) !important;
+    animation: source-active-line-fade-in 90ms ease-out;
+    will-change: opacity;
+}
+@keyframes source-active-line-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
