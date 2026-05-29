@@ -197,10 +197,6 @@ table {
     border-width: 0.5px !important;
 }
 
-.typora-sourceview-on #toggle-sourceview-btn {
-    background: transparent !important;
-}
-
 /*----------------  setting  -----------------*/
 
 .pane-group .nav-group-item:active {
@@ -1504,12 +1500,13 @@ a:hover {
    ========================================= */
 
 /*--- Hide source view & outline toggle buttons ---*/
-#toggle-sourceview-btn, #outline-btn-wrapper {
-    display: none !important;
+.footer-item:hover, .sidebar-footer-item:hover {
+    background: transparent;
 }
 
-#typora-sidebar-resizer:not(.dragging) .typora-sidebar-resizer-bar:hover {
-    background: none!important;
+.footer-item-left ,
+#outline-btn {
+    cursor: default;
 }
 
 /*--- Layout & Dimensions ---*/
@@ -3814,4 +3811,37 @@ li > .outline-item-active::before,
     --pref-primary-text:var(--sidebar-font-color)!important;
     --pref-text-main:var(--font-color)!important;
     --pref-text-sub:var(--sidebar-font-color)!important;
+}
+
+
+/*------------- 源码模式 ------------*/
+/* 切换源码模式按钮的背景 */
+.typora-sourceview-on #toggle-sourceview-btn {
+    background: transparent !important;
+}
+
+/* 源码模式激活行背景 */
+.typora-sourceview-on .CodeMirror-activeline-background {
+    background-color: rgba(142, 164, 255, 0.16) !important;
+}
+
+.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
+    color:#D97757;
+}
+
+.typora-sourceview-on .cm-s-inner .cm-keyword {
+    color:#709958;
+}
+
+.typora-sourceview-on .cm-s-inner .cm-variable {
+    color: #e28469;
+}
+
+.typora-sourceview-on .cm-s-inner .cm-atom, .cm-s-inner.cm-atom,
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom {
+    color: #219ec6;
+}
+
+.cm-s-typora-default .cm-header1:not(.cm-atom):not(.cm-s-inner) {
+    font-size: 1.8rem;
 }
