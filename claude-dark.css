@@ -1509,6 +1509,11 @@ a:hover {
     cursor: default;
 }
 
+/* 侧边栏拖拽区背景 */
+#typora-sidebar-resizer:not(.dragging) .typora-sidebar-resizer-bar:hover {
+    background: none!important;
+}
+
 /*--- Layout & Dimensions ---*/
 #typora-sidebar {
     margin-top: 15px;

@@ -1450,6 +1450,11 @@ a:hover {
     cursor: default;
 }
 
+/* 侧边栏拖拽区背景 */
+#typora-sidebar-resizer:not(.dragging) .typora-sidebar-resizer-bar:hover {
+    background: none!important;
+}
+
 /* ---------- 7.1 侧边栏尺寸 ---------- */
 
 #typora-sidebar {
