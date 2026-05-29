@@ -339,7 +339,7 @@ body {
 
 /*--- Selection ---*/
 ::selection {
-    background: rgba(142, 164, 255, 0.34);
+    background: rgba(142, 164, 255, 0.44);
     color: #FAF9F5;
 }
 
@@ -1815,9 +1815,17 @@ a:hover {
     padding-left: 10.5px!important;
 }
 
+/* 对齐根目录下同级的文件夹标题和文件标题 */
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-library-node[data-is-directory="true"] {
+    padding-left: 13.5px;
+}
+
 /* 用文件夹图标外间距对齐文件夹标题和文件标题 */
 .file-node-icon.fa.fa-folder {
-    margin-right: 6px;
+    margin-right: 6.5px;
 }
 
 /* Hide .md extension */
@@ -2073,7 +2081,7 @@ a:hover {
 }
 
 #file-library-tree
-.file-tree-node.file-node-expanded:not(.file-node-root):not(.file-library-file-node):has(.file-library-file-node.active)
+.file-tree-node:not(.file-node-root):not(.file-library-file-node):has(.file-library-file-node.active)
 > .file-node-content
 > .file-node-title {
     color: var(--claude-folder-expanded-title-color) !important;
