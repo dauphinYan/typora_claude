@@ -202,6 +202,38 @@ table {
     border-width: 0.5px !important;
 }
 
+
+/* 查找替换 */
+
+#md-searchpanel input {
+    border-radius: 3px;
+}
+
+.form-control {
+    border-color: var(--border-color-30);
+}
+
+.code-tooltip .ty-input:focus, input:focus,
+.form-control:focus {
+    border-color: #D97757;
+    box-shadow: none!important;
+}
+
+#md-searchpanel {
+    color:var(--sidebar-font-color);
+    box-shadow: rgba(0,0,0,.6) 0 0 .5em!important;
+}
+
+.searchpanel-search-option-btn {
+    border: none;
+    cursor: default;
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+    box-shadow: none;
+}
+
+
 /* =========================================
    4. 设置界面
    ========================================= */
