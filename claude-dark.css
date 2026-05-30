@@ -398,7 +398,7 @@ body {
 
 .typora-sourceview-on .CodeMirror-selected,
 .typora-sourceview-on .CodeMirror-focused .CodeMirror-selected {
-    background-color: #1e3a5f !important;
+    background-color: var(--theme-selection-background) !important;
 }
 
 .typora-sourceview-on .CodeMirror-selectedtext,

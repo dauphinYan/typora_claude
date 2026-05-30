@@ -3922,6 +3922,21 @@ li > .outline-item-active::before,
     animation: source-active-line-fade-in 90ms ease-out;
     will-change: opacity;
 }
+
+/* 源码模式选区背景 */
+.typora-sourceview-on .CodeMirror-selected,
+.typora-sourceview-on .CodeMirror-focused .CodeMirror-selected {
+    background-color: var(--theme-selection-background) !important;
+}
+
+.typora-sourceview-on .CodeMirror-selectedtext,
+.typora-sourceview-on .CodeMirror-line::selection,
+.typora-sourceview-on .CodeMirror-line > span::selection,
+.typora-sourceview-on .CodeMirror-line > span > span::selection {
+    background: transparent !important;
+    text-shadow: none !important;
+}
+
 @keyframes source-active-line-fade-in {
     from {
         opacity: 0;
