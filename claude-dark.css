@@ -187,6 +187,11 @@ table {
     --text-color: var(--sidebar-font-color);
 }
 
+:root {
+    --swatch-clay: #d97757;
+    --theme-selection-background: color-mix(in srgb, var(--swatch-clay) 50%, transparent);
+}
+
 /* =========================================
    Plugin Overrides
    ========================================= */
@@ -335,7 +340,7 @@ body {
 
 /*--- Selection ---*/
 ::selection {
-    background: rgba(142, 164, 255, 0.44);
+    background: var(--theme-selection-background);
     color: #FAF9F5;
 }
 
