@@ -35,18 +35,10 @@
 }
 
 @font-face {
-    font-family: "Noto Sans";
-    src: url("./claude-fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
+    font-family: "Noto Sans SC";
+    src: url("./claude-fonts/NotoSansSC-VariableFont_wght.ttf") format("truetype");
     font-weight: 100 900;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Noto Sans";
-    src: url("./claude-fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf") format("truetype");
-    font-weight: 100 900;
-    font-style: italic;
     font-display: swap;
 }
 
@@ -171,7 +163,7 @@ table {
     --box-shadow-userinput-focus: 0 26px 68px -28px rgb(0 0 0 / 72%), 0 12px 28px -14px rgb(0 0 0 / 54%), 0 0 0 0.5px hsla(var(--border-200) / 0.32);
     /*--- Font ---*/
     --font-serif: "Anthropic Serif Web Text", Georgia, "Times New Roman", "Noto Serif SC";
-    --font-sans: "Anthropic Sans Web Text", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-sans: "Anthropic Sans Web Text", "Noto Sans SC", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-mono: "Anthropic Mono Variable", ui-monospace, monospace;
     --font-weight: 360;
     --font-strong: 530;
@@ -2030,8 +2022,8 @@ a:hover {
 
 @font-face {
     font-family: "ClaudeRootCJKLogo";
-    src: local("站酷小薇LOGO体"),
-         url("./claude-fonts/ZhanKuXiaoLOGOTi-2.otf") format("opentype");
+    src: local("FZQingKeBenYueSongS-R-GB"),
+         url("./claude-fonts/FZQingKeBenYueSongS-R-GB.ttf") format("truetype");
     unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
 }
 
@@ -3620,7 +3612,7 @@ li > .outline-item-active::before,
 
 /* --- Integrated menu refinements: font, menu states, open/export interaction, preference shell --- */
 .unibody-window {
-    --claude-mega-font: "Anthropic Sans Web Text", "Noto Sans", "Noto Sans SC", system-ui, "Segoe UI", sans-serif;
+    --claude-mega-font: "Anthropic Sans Web Text", "Noto Sans SC", system-ui, "Segoe UI", sans-serif;
     --claude-mega-slider-bg:
         linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06)),
         rgba(48, 48, 46, 0.78);
