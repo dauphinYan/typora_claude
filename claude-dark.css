@@ -184,46 +184,6 @@ table {
     --theme-selection-background: color-mix(in srgb, var(--swatch-clay) 50%, transparent);
 }
 
-/* =========================================
-   Plugin Overrides
-   ========================================= */
-
-#plugin-action-buttons .action-item {
-    color: var(--sidebar-font-color) !important;
-    border-color: var(--border-color-15) !important;
-    border-width: 0.5px !important;
-}
-
-/* 查找替换 */
-
-#md-searchpanel input {
-    border-radius: 3px;
-}
-
-.form-control {
-    border-color: var(--border-color-30);
-}
-
-.code-tooltip .ty-input:focus, input:focus,
-.form-control:focus {
-    border-color: #D97757;
-    box-shadow: none!important;
-}
-
-#md-searchpanel {
-    color:var(--sidebar-font-color);
-    box-shadow: rgba(0,0,0,.6) 0 0 .5em!important;
-}
-
-.searchpanel-search-option-btn {
-    border: none;
-    cursor: default;
-}
-
-#md-searchpanel .btn:not(.close-btn):hover {
-    box-shadow: none;
-}
-
 /*----------------  setting  -----------------*/
 
 .pane-group .nav-group-item:active {
@@ -3862,14 +3822,53 @@ li > .outline-item-active::before,
 }
 
 
-/*------------ chajian ------------*/
-/*1. 文件树计数*/
+/*------------ 第三方插件适配 ------------*/
+/*1. 插件按钮与查找替换*/
+#plugin-action-buttons .action-item {
+    color: var(--sidebar-font-color) !important;
+    border-color: var(--border-color-15) !important;
+    border-width: 0.5px !important;
+}
+
+#md-searchpanel input {
+    border-radius: 3px;
+}
+
+.form-control {
+    border-color: var(--border-color-30);
+}
+
+.code-tooltip .ty-input:focus, input:focus,
+.form-control:focus {
+    border-color: #D97757;
+    box-shadow: none!important;
+}
+
+#md-searchpanel {
+    color:var(--sidebar-font-color);
+    box-shadow: rgba(0,0,0,.6) 0 0 .5em!important;
+}
+
+.searchpanel-search-option-btn {
+    border: none;
+    cursor: default;
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+    box-shadow: none;
+}
+
+#md-searchpanel.searchpanel-replace-mode {
+    z-index: 899!important;
+}
+
+/*2. 文件树计数*/
 .file-node-content:after {
     background: none!important;
     border: none!important;
     color: #8F8C93!important;
 }
-/*2. 设置界面配色*/
+/*3. 设置界面配色*/
 .plugin-preferences-mask {
     --pref-bg-dialog:#1e1e20!important;
     --pref-bg-sidebar:#252528!important;
@@ -3879,6 +3878,263 @@ li > .outline-item-active::before,
     --pref-primary-text:var(--sidebar-font-color)!important;
     --pref-text-main:var(--font-color)!important;
     --pref-text-sub:var(--sidebar-font-color)!important;
+}
+
+/*4. 插件右键菜单*/
+.plugin-common-menu {
+    min-width: 196px;
+    padding: 6px !important;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(38, 38, 36, 0.18)),
+        rgba(31, 31, 29, 0.50) !important;
+    color: var(--font-color) !important;
+    border: 0.5px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 12px !important;
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.035) !important;
+    backdrop-filter: blur(28px) saturate(1.55) brightness(0.96);
+    -webkit-backdrop-filter: blur(28px) saturate(1.55) brightness(0.96);
+    overflow: hidden;
+    user-select: none;
+}
+
+.plugin-common-menu.show {
+    transform-origin: top left;
+    animation: claude-context-menu-in 120ms cubic-bezier(.16, 1, .3, 1) both;
+    will-change: opacity, transform;
+}
+
+.plugin-common-menu .menu-item {
+    height: 28px;
+    line-height: 28px;
+    padding: 0 14px !important;
+    border-radius: 8px;
+    background: transparent !important;
+    color: var(--font-color) !important;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    white-space: nowrap;
+    cursor: default;
+    transition:
+        color 0.18s ease,
+        background-color 0.24s ease;
+}
+
+.plugin-common-menu .menu-item:hover,
+.plugin-common-menu .menu-item.active,
+.plugin-common-menu .menu-item.selected {
+    background: rgba(217, 119, 87, 0.10) !important;
+    color: var(--font-color) !important;
+    transform: none !important;
+}
+
+/*5. 顶部标签栏*/
+#plugin-window-tab {
+    left: 0 !important;
+    color: var(--sidebar-font-color);
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+}
+
+body.pin-outline #plugin-window-tab {
+    left: calc(var(--sidebar-width) + 14px) !important;
+    width: calc(100vw - var(--sidebar-width) - 14px) !important;
+}
+
+#plugin-window-tab::before,
+#plugin-window-tab::after,
+#plugin-window-tab .tab-bar::before,
+#plugin-window-tab .tab-bar::after {
+    display: none !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+}
+
+#plugin-window-tab .tab-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 42px;
+    padding: 6px 12px 6px 14px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+}
+
+#plugin-window-tab .tab-bar::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+#plugin-window-tab .tab-bar::-webkit-scrollbar-thumb,
+#plugin-window-tab .tab-bar:hover::-webkit-scrollbar-thumb {
+    visibility: hidden !important;
+    background: transparent !important;
+}
+
+body.pin-outline #plugin-window-tab .tab-bar {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+#plugin-window-tab .tab-wrapper {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 7px;
+    align-items: center;
+    width: auto !important;
+    max-width: none !important;
+    min-width: max-content;
+    overflow: visible;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+}
+
+#plugin-window-tab .tab-container {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    position: relative;
+    height: 31px;
+    min-width: 92px;
+    max-width: 210px;
+    padding: 0 30px 0 15px !important;
+    border: 0.5px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 999px !important;
+    background: rgba(250, 249, 245, 0.06) !important;
+    box-shadow:
+        0 9px 20px -16px rgba(0, 0, 0, 0.44),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    color: var(--sidebar-font-color) !important;
+    overflow: hidden;
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#plugin-window-tab .tab-container:hover {
+    background: rgba(250, 249, 245, 0.11) !important;
+    border-color: rgba(217, 119, 87, 0.26) !important;
+    color: var(--sidebar-font-color) !important;
+    transform: translateY(-1px);
+    box-shadow:
+        0 12px 26px -18px rgba(0, 0, 0, 0.56),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+#plugin-window-tab .tab-container.active {
+    background: rgba(48, 48, 46, 0.92) !important;
+    border-color: rgba(217, 119, 87, 0.34) !important;
+    color: #D97757 !important;
+    box-shadow:
+        0 14px 30px -20px rgba(0, 0, 0, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+#plugin-window-tab .active-indicator {
+    display: none !important;
+}
+
+#plugin-window-tab .tab-container.active .active-indicator {
+    display: none !important;
+}
+
+#plugin-window-tab .window-tab-name {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: var(--sidebar-font-weight);
+    line-height: 31px;
+}
+
+#plugin-window-tab .tab-container:hover .window-tab-name {
+    color: var(--sidebar-font-color) !important;
+    font-weight: var(--sidebar-font-weight) !important;
+}
+
+#plugin-window-tab .tab-container.active .window-tab-name,
+#plugin-window-tab .tab-container.active:hover .window-tab-name {
+    color: #D97757 !important;
+    font-weight: var(--sidebar-font-weight) !important;
+}
+
+#plugin-window-tab .close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    top: 6px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    opacity: 0.62;
+    transition:
+        background-color 0.16s ease,
+        opacity 0.16s ease;
+}
+
+#plugin-window-tab .close-button:hover {
+    background: rgba(250, 249, 245, 0.10) !important;
+    opacity: 1;
+}
+
+#plugin-window-tab .add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 31px;
+    width: 31px;
+    height: 31px;
+    margin-left: 8px;
+    padding-left: 0 !important;
+    border: 0.5px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 999px !important;
+    background: rgba(250, 249, 245, 0.05) !important;
+    color: var(--sidebar-font-color) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#plugin-window-tab .add-button:hover {
+    background: transparent !important;
+    border-color: rgba(217, 119, 87, 0.28) !important;
+    color: var(--font-color) !important;
+    transform: translateY(-1px);
+}
+
+#plugin-window-tab .add-button:hover .add-icon {
+    background: transparent !important;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .plugin-common-menu.show,
+    #plugin-window-tab .tab-container,
+    #plugin-window-tab .active-indicator,
+    #plugin-window-tab .add-button {
+        animation: none;
+        transition: none;
+    }
 }
 
 
