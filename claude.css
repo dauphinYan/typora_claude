@@ -89,18 +89,23 @@ body {
 a {
     cursor: default;
 }
+
 .menu-item-container a.menu-style-btn {
     cursor: default;
 }
+
 table {
     cursor: text;
 }
+
 .outline-label {
     cursor: default;
 }
+
 .info-panel-tab {
     cursor: default;
 }
+
 .sidebar-footer-item {
     cursor: default;
 }
@@ -115,8 +120,10 @@ table {
     --hover-color: #f0eee6;
     --font-color: #141413;
     --border-color: #1f1e1d;
-    --border-color-15: #1f1e1d26;       /* 侧边栏、输入框、按钮（0.15透明度） */
-    --border-color-30: #1f1e1d4d;       /* （搜索）弹出窗口、new project按钮（0.3透明度） */
+    --border-color-15: #1f1e1d26;
+    /* 侧边栏、输入框、按钮（0.15透明度） */
+    --border-color-30: #1f1e1d4d;
+    /* （搜索）弹出窗口、new project按钮（0.3透明度） */
     --sidebar-font-color: #3d3d3a;
 
     /* 对应claude话题搜索弹出窗口 */
@@ -124,7 +131,8 @@ table {
     --file-search-list-bg-color: #f8f8f3;
     --file-search-list-focus-bg-color: #f5f4ed;
 
-    --button-bg-color: #e8e6dc;         /* new project按钮背景色 / Typora中的YAML背景色 */
+    --button-bg-color: #e8e6dc;
+    /* new project按钮背景色 / Typora中的YAML背景色 */
 
     --sidebar-gradient-to: #f5f4ed4d;
     --sidebar-gradient-from: #f5f4ed0d;
@@ -198,61 +206,61 @@ table {
 }
 
 .nav-group-item:active {
-    background-color: var(--hover-color)!important;
+    background-color: var(--hover-color) !important;
 }
 
 .pane-group .nav-group-item {
-    border-radius: 7px!important;
+    border-radius: 7px !important;
 }
 
 .pane-group .export-detail .input-group-content {
-    border-color: transparent!important;
+    border-color: transparent !important;
 }
 
 .export-detail textarea {
-    border-radius: 5px!important;
-    background-color: var(--border-color-30)!important;
+    border-radius: 5px !important;
+    background-color: var(--border-color-30) !important;
 }
 
 .export-detail textarea:focus {
-    border-color: #d97757!important;
+    border-color: #d97757 !important;
 }
 
 .export-items-list .separator {
-    border-color: var(--border-color-30)!important;
+    border-color: var(--border-color-30) !important;
 }
 
 /* 导出窗口 */
 .export-detail {
-    background: transparent!important;
+    background: transparent !important;
 }
 
 .export-item.active {
-    background-color: var(--hover-color)!important;
+    background-color: var(--hover-color) !important;
 }
 
 .export-items-list-control {
-    background: none!important;
+    background: none !important;
 }
 
-.pane-sm.sidebar  .search-input {
-    border-color: #D97757!important;
-    border-radius: 20px!important;
+.pane-sm.sidebar .search-input {
+    border-color: #D97757 !important;
+    border-radius: 20px !important;
 }
 
 .pane-group button.btn-default {
-    border-radius: 5px!important;
-    border-color: var(--border-color-15)!important;
+    border-radius: 5px !important;
+    border-color: var(--border-color-15) !important;
 }
 
 .pane-group button.btn-default:hover {
-    border-color:transparent!important;
+    border-color: transparent !important;
 }
 
 .pane-group .input-group-content {
-    padding: 24px 30px 24px 16px!important;
-    border: 1px solid var(--border-color-15)!important;
-    border-radius: 13px!important;
+    padding: 24px 30px 24px 16px !important;
+    border: 1px solid var(--border-color-15) !important;
+    border-radius: 13px !important;
 }
 
 .pane-group .input-group-header-title {
@@ -260,7 +268,7 @@ table {
 }
 
 .pane-group input:not([type="range"]):not([type="color"]) {
-    border-radius: 4px!important;
+    border-radius: 4px !important;
 }
 
 .pane::-webkit-scrollbar {
@@ -298,14 +306,14 @@ body {
 
 #context-menu li[data-group="search"][data-key="search-default"] *,
 #context-menu li[data-group="search"][data-key="search-default"],
-#context-menu li[data-group="search"][data-key="search-default"] > a {
+#context-menu li[data-group="search"][data-key="search-default"]>a {
     background: transparent !important;
     box-shadow: none !important;
 }
 
 /* 隐藏提示 */
 .ty-tooltip.shown {
-    display: none!important;
+    display: none !important;
 }
 
 /* 右键菜单阴影 */
@@ -330,17 +338,12 @@ body {
         0 16px 42px rgba(20, 20, 19, 0.17),
         0 2px 8px rgba(20, 20, 19, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.76);
-        
+
     border-radius: 12px;
 }
 
-/* 字数统计透明的调低 */
-.typora-node.no-collapse-outline.allow-file-tree-scroll.unibody-window.show-footer.os-windows.os-windows-10.hide-br-and-line-break.typora-maxmized.ty-show-word-count.pin-outline #footer-word-count-info {
-    background: rgba(250, 249, 245, 0.88)!important;
-}
-
 .menu-item-container a.menu-style-btn {
-    background: none!important;
+    background: none !important;
 }
 
 /* 仅为一级右键菜单添加微入场动效，避免影响二级菜单 */
@@ -387,6 +390,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     #context-menu,
     #file-menu.show,
     #outline-menu.show,
@@ -396,19 +400,21 @@ body {
     }
 }
 
-.context-menu.dropdown-menu>.active>a, .context-menu.dropdown-menu>li>a:hover, .menu-style-btn.active {
-    background: transparent!important;
-    color: #6B4E2E!important;
+.context-menu.dropdown-menu>.active>a,
+.context-menu.dropdown-menu>li>a:hover,
+.menu-style-btn.active {
+    background: transparent !important;
+    color: #6B4E2E !important;
 }
 
 /* 隐藏右键菜单栏的内容分割线 */
 .dropdown-menu .divider {
-    border-top: none!important;
+    border-top: none !important;
 }
 
 /* 隐藏右键菜单的按钮边框阴影 */
 .menu-item-container a.menu-style-btn {
-    box-shadow: none!important;
+    box-shadow: none !important;
 }
 
 .context-menu.dropdown-menu>li>a {
@@ -454,9 +460,10 @@ body {
     background-color: transparent !important;
     border: none !important;
 }
+
 #file-library::-webkit-scrollbar {
-  width: 0!important;
-  height: 0!important;
+    width: 0 !important;
+    height: 0 !important;
 }
 
 /* 去除编辑区底栏的上边框 */
@@ -465,10 +472,10 @@ body {
 }
 
 li.folder-menu-item.file-action-item:hover,
-li.folder-menu-item.file-action-item:hover > a,
-li.folder-menu-item.file-action-item:hover > a *,
+li.folder-menu-item.file-action-item:hover>a,
+li.folder-menu-item.file-action-item:hover>a *,
 li.folder-menu-item.file-action-item.selected-folder-menu-item:hover,
-li.folder-menu-item.file-action-item.selected-folder-menu-item:hover > a {
+li.folder-menu-item.file-action-item.selected-folder-menu-item:hover>a {
     background: none !important;
     background-color: transparent !important;
     box-shadow: none !important;
@@ -476,7 +483,7 @@ li.folder-menu-item.file-action-item.selected-folder-menu-item:hover > a {
 
 /* 隐藏拼写检查的滚动条 */
 .ty-lang-list::-webkit-scrollbar {
-    display: none!important;
+    display: none !important;
 }
 
 /* 编辑区底栏 */
@@ -575,8 +582,8 @@ li.folder-menu-item.file-action-item.selected-folder-menu-item:hover > a {
 /* ---------- Typora 隐藏加粗/斜体星号标记 ---------- */
 
 /* 隐藏点击时展开的前后星号 */
-#write .md-pair-s.md-expand > .md-meta.md-before,
-#write .md-pair-s.md-expand > .md-meta.md-after {
+#write .md-pair-s.md-expand>.md-meta.md-before,
+#write .md-pair-s.md-expand>.md-meta.md-after {
     display: inline-block !important;
     width: 0 !important;
     height: 0 !important;
@@ -597,14 +604,14 @@ li.folder-menu-item.file-action-item.selected-folder-menu-item:hover > a {
 span[md-inline="highlight"] mark,
 .md-pair-s mark {
     /* 1. 去除 Typora 默认的背景色 */
-    background-color: transparent !important; 
-    
+    background-color: transparent !important;
+
     /* 2. 设置波浪线下划线，颜色为 #D97757 */
-    text-decoration: underline wavy #D97757; 
-    
+    text-decoration: underline wavy #D97757;
+
     /* 3. （可选）设置波浪线距离文字的距离，避免太拥挤 */
-    text-underline-offset: 3px; 
-    
+    text-underline-offset: 3px;
+
     /* 4. （可选）如果你希望文字本身的颜色也变成这个颜色，可以解除下面这行的注释 */
     /* color: #D97757; */
 }
@@ -612,10 +619,10 @@ span[md-inline="highlight"] mark,
 /* 统一下划线颜色 */
 span[md-inline="underline"] u {
     /* 设置直线下划线，颜色统一为 #D97757 */
-    text-decoration: underline solid #D97757 !important;  
+    text-decoration: underline solid #D97757 !important;
 
     /* 保持和高亮一样的文字间距，视觉更统一 */
-    text-underline-offset: 3px; 
+    text-underline-offset: 3px;
 }
 
 /* ---------- 6.3 有序列表和无序列表 ---------- */
@@ -633,26 +640,36 @@ span[md-inline="underline"] u {
     margin: 0;
 }
 
-#write li > p {
+#write li>p {
     padding: 0;
 }
 
-.write > ul,
-.write > ol {
+/* 最外层列表 */
+.write>ul,
+.write>ol {
     padding: 0 2rem;
     margin: 0 0 0.75rem 0;
 }
 
-.write > ul ul,
-.write > ol ol {
+/* 相同列表嵌套 */
+.write>ul ul,
+.write>ol ol {
     padding: 0 2rem 0.25rem 2rem;
+    /* padding: 0 0rem 0 2rem; */
     margin: 0.25rem 0 0 0;
 }
 
-.write > ul ol,
-.write > ol ul {
+/* 不同列表嵌套 */
+.write>ul ol,
+.write>ol ul {
     padding: 0 2rem 0 2rem;
+    /* padding: 0 0 0 2rem; */
     margin: 0.25rem 0 0 0;
+}
+
+/* 从第五层嵌套开始，取消所有列表（含纯同类嵌套与混合嵌套）的右边距 */
+.write :is(ul, ol) :is(ul, ol) :is(ul, ol) :is(ul, ol) :is(ul, ol) {
+    padding-right: 0 !important;
 }
 
 /* 将所有嵌套层级的普通无序列表修改为实心圆点，同时排除任务列表 */
@@ -662,7 +679,7 @@ span[md-inline="underline"] u {
 
 /* ---------- 6.4 复选框 ---------- */
 
-#write li.md-task-list-item > input[type="checkbox"] {
+#write li.md-task-list-item>input[type="checkbox"] {
     display: inline-block;
     -webkit-appearance: none;
     appearance: none;
@@ -681,13 +698,13 @@ span[md-inline="underline"] u {
 }
 
 /* 选中状态下的背景色 */
-#write li.md-task-list-item > input[type="checkbox"]:checked {
+#write li.md-task-list-item>input[type="checkbox"]:checked {
     background-color: #d0d0cf !important;
     border-color: #d0cfce !important;
 }
 
 /* 精确复刻默认的勾号 (√) */
-#write li.md-task-list-item > input[type="checkbox"]:checked::after {
+#write li.md-task-list-item>input[type="checkbox"]:checked::after {
     content: "";
     position: absolute;
     box-sizing: border-box;
@@ -727,7 +744,8 @@ span[md-inline="underline"] u {
     border-top: none;
     border-bottom-width: 0.5px;
     padding: 0.5rem 1rem 0.5rem 1px !important;
-    height: 1px; /* 魔法属性：让内层 height: 100% 生效 */
+    height: 1px;
+    /* 魔法属性：让内层 height: 100% 生效 */
 }
 
 .write tr:last-child td {
@@ -850,14 +868,14 @@ span[md-inline="underline"] u {
 }
 
 .md-table-resize-popover .md-grid-board-wrap .popover-title {
-    border-top: var(--border-color-30)!important;
+    border-top: var(--border-color-30) !important;
 }
 
 /* 紧挨着表格容器的标题去除底部外间距 */
-.md-table-fig.table-figure + h1,
-.md-table-fig.table-figure + h2,
-.md-table-fig.table-figure + h3,
-.md-table-fig.table-figure + h4 {
+.md-table-fig.table-figure+h1,
+.md-table-fig.table-figure+h2,
+.md-table-fig.table-figure+h3,
+.md-table-fig.table-figure+h4 {
     margin-top: 0 !important;
 }
 
@@ -865,8 +883,9 @@ span[md-inline="underline"] u {
 .typora-table-drag-area {
     display: none;
 }
+
 .ty-table-edit.md-table-edit.md-tooltip-remove {
-    margin-top: -15px!important;
+    margin-top: -15px !important;
 }
 
 /* ---------- 6.6 分割线 ---------- */
@@ -880,10 +899,10 @@ hr {
 }
 
 /* 紧挨着hr容器的标题去除底部外间距 */
-.md-hr.md-end-block + h1,
-.md-hr.md-end-block + h2,
-.md-hr.md-end-block + h3,
-.md-hr.md-end-block + h4 {
+.md-hr.md-end-block+h1,
+.md-hr.md-end-block+h2,
+.md-hr.md-end-block+h3,
+.md-hr.md-end-block+h4 {
     margin-top: 0 !important;
 }
 
@@ -934,7 +953,7 @@ hr {
     transform: none !important;
 }
 
-.md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-diagram-panel-preview > svg,
+.md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-diagram-panel-preview>svg,
 .md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-diagram-panel-preview .mermaid-svg {
     display: block !important;
     max-width: 100%;
@@ -948,10 +967,12 @@ hr {
     font-weight: var(--font-weight);
     line-height: 1.625;
     font-family: var(--font-mono);
+    word-break: break-all;
 }
 
 .CodeMirror pre {
     padding: 0 !important;
+    word-break: break-all !important;
 }
 
 /* 语法标签栏输入框 */
@@ -1172,7 +1193,7 @@ blockquote {
 }
 
 /* 引用框下子段落的间距 */
-blockquote > p {
+blockquote>p {
     padding: 0 2rem 0 0.5rem;
     margin: 0;
 }
@@ -1311,7 +1332,7 @@ blockquote ul {
 
 /* ---------- 6.11 公式块 ---------- */
 
-.md-rawblock-container.md-math-container > .MathJax {
+.md-rawblock-container.md-math-container>.MathJax {
     margin: 0 !important;
 }
 
@@ -1456,18 +1477,19 @@ a:hover {
    ========================================= */
 
 /* 去除展开侧边栏和开启源码模式的按钮 */
-.footer-item:hover, .sidebar-footer-item:hover {
+.footer-item:hover,
+.sidebar-footer-item:hover {
     background: transparent;
 }
 
-.footer-item-left ,
+.footer-item-left,
 #outline-btn {
     cursor: default;
 }
 
 /* 侧边栏拖拽区背景 */
 #typora-sidebar-resizer:not(.dragging) .typora-sidebar-resizer-bar:hover {
-    background: none!important;
+    background: none !important;
 }
 
 /* ---------- 7.1 侧边栏尺寸 ---------- */
@@ -1494,11 +1516,9 @@ a:hover {
 /* ---------- 7.2 侧边栏背景、阴影与圆角 ---------- */
 
 #typora-sidebar {
-    background-image: linear-gradient(
-        to top,
-        var(--sidebar-gradient-from),
-        var(--sidebar-gradient-to)
-    );
+    background-image: linear-gradient(to top,
+            var(--sidebar-gradient-from),
+            var(--sidebar-gradient-to));
     border-color: var(--border-color-15);
     border-radius: 15px;
     box-shadow: var(--box-shadow-userinput) !important;
@@ -1524,8 +1544,9 @@ a:hover {
 .ty-add:before {
     color: #1f1e1d80;
 }
+
 .ty-three-cells:before {
-    color: #1f1e1dbf;    
+    color: #1f1e1dbf;
 }
 
 /* .ty-add:before:hover {
@@ -1533,7 +1554,7 @@ a:hover {
 } */
 
 #sidebar-new-file-btn:hover {
-    background: transparent!important;
+    background: transparent !important;
 }
 
 #sidebar-footer-main-item-label {
@@ -1541,11 +1562,11 @@ a:hover {
 }
 
 .ty-icon.ty-dots-v {
-    color: var(--border-color-15) !important;    
+    color: var(--border-color-15) !important;
 }
 
 #switch-file-list-btn:hover {
-    background: transparent!important;
+    background: transparent !important;
 }
 
 /* 去除侧边栏底栏的边框 */
@@ -1555,29 +1576,27 @@ a:hover {
     background-clip: padding-box;
 }
 
-#ty-sidebar-footer > div {
+#ty-sidebar-footer>div {
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
     background: transparent !important;
     background-clip: padding-box;
 }
 
-#typora-sidebar #sidebar-menu-btn:hover > .sidebar-footer-item,
-#typora-sidebar #sidebar-menu-btn > .sidebar-footer-item:hover,
+#typora-sidebar #sidebar-menu-btn:hover>.sidebar-footer-item,
+#typora-sidebar #sidebar-menu-btn>.sidebar-footer-item:hover,
 #typora-sidebar #sidebar-menu-btn:hover #sidebar-footer-main-item-label,
 #typora-sidebar #sidebar-footer-main-item-label:hover,
-#typora-sidebar #sidebar-menu-btn:hover > .sidebar-footer-item .footer-btn,
-#typora-sidebar #sidebar-menu-btn > .sidebar-footer-item .footer-btn:hover {
+#typora-sidebar #sidebar-menu-btn:hover>.sidebar-footer-item .footer-btn,
+#typora-sidebar #sidebar-menu-btn>.sidebar-footer-item .footer-btn:hover {
     background: transparent !important;
     background-color: transparent !important;
 }
 
 #sidebar-files-menu {
-    background: color-mix(
-        in srgb,
-        var(--file-search-list-bg-color) 58%,
-        transparent
-    ) !important;
+    background: color-mix(in srgb,
+            var(--file-search-list-bg-color) 58%,
+            transparent) !important;
 
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
 
@@ -1650,7 +1669,7 @@ a:hover {
     z-index: 20;
 }
 
-.info-panel-tab-wrapper > div[style*="flex"] {
+.info-panel-tab-wrapper>div[style*="flex"] {
     flex: 0 0 0 !important;
     width: 0 !important;
 }
@@ -1792,7 +1811,7 @@ a:hover {
 
 /* 激活项标题颜色 */
 .file-list-item.active {
-    color: #756420!important;
+    color: #756420 !important;
 }
 
 #typora-sidebar #sidebar-loading-template {
@@ -1803,7 +1822,7 @@ a:hover {
     background: #f8f8f3 !important;
 }
 
-#typora-sidebar #sidebar-loading-template .typora-search-spinner > div {
+#typora-sidebar #sidebar-loading-template .typora-search-spinner>div {
     background-color: var(--LOGO-color) !important;
 }
 
@@ -1811,20 +1830,17 @@ a:hover {
 
 /* 文件树节点的间距、对齐优化 */
 /* 从第三层级开始，调整最佳的上下级标题水平间距 */
-.file-tree-node > .file-node-children > .file-library-node>.file-node-children> .file-library-node {
+.file-tree-node>.file-node-children>.file-library-node>.file-node-children>.file-library-node {
     padding-left: 13px;
 }
 
 /* 用文件节点内间距对齐同级文件夹图标和文件图标 */
 .file-library-node.file-tree-node.file-library-file-node {
-    padding-left: 10.5px!important;
+    padding-left: 10.5px !important;
 }
 
 /* 对齐根目录下同级的文件夹标题和文件标题 */
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-library-node[data-is-directory="true"] {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-library-node[data-is-directory="true"] {
     padding-left: 13.5px;
 }
 
@@ -1839,9 +1855,7 @@ a:hover {
 }
 
 /* 文件夹空闲状态时的图标 */
-.file-library-node[data-has-sub="false"][data-is-directory="true"]
-> .file-node-content
-> .file-node-icon.fa-folder:before {
+.file-library-node[data-has-sub="false"][data-is-directory="true"]>.file-node-content>.file-node-icon.fa-folder:before {
     content: "\f114";
 }
 
@@ -1856,7 +1870,7 @@ a:hover {
 
 /* 移除小三角 */
 .file-node-open-state {
-    display: none!important;
+    display: none !important;
 }
 
 /* ----- 节点展开动画 ----- */
@@ -1866,10 +1880,12 @@ a:hover {
         opacity: 0;
         transform: translate3d(-12px, 0, 0);
     }
+
     70% {
         opacity: 1;
         transform: translate3d(2px, 0, 0);
     }
+
     100% {
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -1877,7 +1893,7 @@ a:hover {
 }
 
 /* 防止子节点动画溢出 */
-.file-tree-node > .file-node-children {
+.file-tree-node>.file-node-children {
     overflow: hidden;
 }
 
@@ -1891,49 +1907,69 @@ a:hover {
 } */
 
 /* 分配接踵延迟变量 */
-.file-tree-node > .file-node-children > .file-library-node {
+.file-tree-node>.file-node-children>.file-library-node {
     --tree-delay: 0s;
 }
 
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(1)  { --tree-delay: 0.00s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(2)  { --tree-delay: 0.04s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(3)  { --tree-delay: 0.08s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(4)  { --tree-delay: 0.12s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(5)  { --tree-delay: 0.16s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(6)  { --tree-delay: 0.20s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(7)  { --tree-delay: 0.24s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(8)  { --tree-delay: 0.28s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(9)  { --tree-delay: 0.32s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(10) { --tree-delay: 0.36s; }
-.file-tree-node.file-node-expanded:not(.file-node-root) > .file-node-children > .file-library-node:nth-of-type(n+11) { --tree-delay: 0.42s; }
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(1) {
+    --tree-delay: 0.00s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(2) {
+    --tree-delay: 0.04s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(3) {
+    --tree-delay: 0.08s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(4) {
+    --tree-delay: 0.12s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(5) {
+    --tree-delay: 0.16s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(6) {
+    --tree-delay: 0.20s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(7) {
+    --tree-delay: 0.24s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(8) {
+    --tree-delay: 0.28s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(9) {
+    --tree-delay: 0.32s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(10) {
+    --tree-delay: 0.36s;
+}
+
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node:nth-of-type(n+11) {
+    --tree-delay: 0.42s;
+}
 
 /* 基础滑入动画（所有子节点默认生效） */
-.file-tree-node.file-node-expanded:not(.file-node-root)
-> .file-node-children
-> .file-library-node
-> .file-node-content
-> :is(.file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div) {
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node>.file-node-content> :is(.file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div) {
     animation: treeItemIn 0.35s ease-out both;
     animation-delay: var(--tree-delay);
 }
 
 /* 核心修复：防止母节点首次展开时闪烁 */
-.file-tree-node.file-node-expanded:not(.file-node-root)
-> .file-node-children
-> .file-library-node.file-node-expanded
-> .file-node-content
-> :is(.file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div) {
+.file-tree-node.file-node-expanded:not(.file-node-root)>.file-node-children>.file-library-node.file-node-expanded>.file-node-content> :is(.file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div) {
     animation-duration: 0.001s !important;
     animation-delay: 0s !important;
 }
 
 /* 防止其内部的子项在收起瞬间回弹 */
-.file-tree-node.file-node-collapsed
-> .file-node-children
-:is(.file-node-content, .file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div),
-.file-tree-node:not(.file-node-root):not(.file-node-expanded)
-> .file-node-children
-:is(.file-node-content, .file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div) {
+.file-tree-node.file-node-collapsed>.file-node-children:is(.file-node-content, .file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div),
+.file-tree-node:not(.file-node-root):not(.file-node-expanded)>.file-node-children:is(.file-node-content, .file-node-open-state, .file-node-icon, .file-node-title, .file-tree-rename-div) {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
@@ -1949,24 +1985,24 @@ a:hover {
 }
 
 /* 悬停时不显示节点背景，保留布局圆角以免覆盖默认命中层 */
-.file-tree-node:not(.file-node-root):not(.active):has(> .file-node-content:hover) > .file-node-background {
+.file-tree-node:not(.file-node-root):not(.active):has(> .file-node-content:hover)>.file-node-background {
     background-color: transparent;
 }
 
 /* 点击后节点的背景色（不再使用单独背景层） */
-.file-tree-node.active > .file-node-background {
+.file-tree-node.active>.file-node-background {
     /* background-color: var(--hover-color); */
     background-color: transparent;
 }
 
 /* 节点激活背景替换单独背景层 */
-.file-library-node.file-library-file-node.active > .file-node-content {
+.file-library-node.file-library-file-node.active>.file-node-content {
     background: var(--hover-color);
     border-radius: 8px;
 }
 
 /* 文件树换行 */
-.file-library-node.file-library-file-node > .file-node-content > .file-node-title {
+.file-library-node.file-library-file-node>.file-node-content>.file-node-title {
     min-width: 0;
     white-space: normal !important;
     overflow-wrap: anywhere;
@@ -1974,13 +2010,13 @@ a:hover {
 }
 
 /* 文字位移（修复版 - 使用独立 translate） */
-#file-library-tree .file-library-file-node > .file-node-content .file-node-icon,
+#file-library-tree .file-library-file-node>.file-node-content .file-node-icon,
 .file-node-content .file-node-title {
     transition: translate 0.25s ease-out;
 }
 
-#file-library-tree .file-library-file-node > .file-node-content:hover .file-node-icon,
-.file-tree-node:not(.file-node-root) > .file-node-content:hover .file-node-title {
+#file-library-tree .file-library-file-node>.file-node-content:hover .file-node-icon,
+.file-tree-node:not(.file-node-root)>.file-node-content:hover .file-node-title {
     translate: 4px 0;
 }
 
@@ -1997,26 +2033,26 @@ a:hover {
 
 /* 文件树节点激活项的字体颜色 */
 .file-library-node.file-tree-node.file-library-file-node.active .file-node-title {
-    color: #D97757!important;
+    color: #D97757 !important;
 }
 
 @font-face {
     font-family: "ClaudeRootCJKLogo";
     src: local("FZQingKeBenYueSongS-R-GB"),
-         url("./claude-fonts/FZQingKeBenYueSongS-R-GB.ttf") format("truetype");
+        url("./claude-fonts/FZQingKeBenYueSongS-R-GB.ttf") format("truetype");
     unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
 }
 
 /* 根节点 */
-#file-library-tree > div:first-child > div:nth-child(2) > i:first-child {
+#file-library-tree>div:first-child>div:nth-child(2)>i:first-child {
     display: none;
 }
 
-#file-library-tree > div:first-child > div:nth-child(1) {
+#file-library-tree>div:first-child>div:nth-child(1) {
     height: 44px;
 }
 
-#file-library-tree > div:first-child > div:nth-child(2) {
+#file-library-tree>div:first-child>div:nth-child(2) {
     font-size: 24px;
     font-family: "ClaudeRootCJKLogo", UnifrakturMaguntia;
     line-height: 30px;
@@ -2033,126 +2069,67 @@ a:hover {
 /* 不同层级的文件夹图标颜色 */
 /* 第 1 层文件夹图标 */
 /* 根目录之下的第 1 层文件夹图标 */
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node {
     --claude-folder-expanded-title-color: #D97757;
 }
 
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node
-> .file-node-content
-> .file-node-icon.fa-folder::before {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node>.file-node-content>.file-node-icon.fa-folder::before {
     color: #D97757 !important;
 }
 
 /* 第 2 层文件夹图标 */
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node {
     --claude-folder-expanded-title-color: #C9826F;
 }
 
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-content
-> .file-node-icon.fa-folder::before {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-content>.file-node-icon.fa-folder::before {
     color: #C9826F !important;
 }
 
 /* 第 3 层文件夹图标 */
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node {
     --claude-folder-expanded-title-color: #A98E82;
 }
 
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-content
-> .file-node-icon.fa-folder::before {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-content>.file-node-icon.fa-folder::before {
     color: #A98E82 !important;
 }
 
 /* 第 4 层及更深文件夹图标 */
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-.file-tree-node {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-children .file-tree-node {
     --claude-folder-expanded-title-color: #8F8A83;
 }
 
-#file-library-tree
-> .file-tree-node.file-node-root
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-> .file-tree-node
-> .file-node-children
-.file-tree-node
-> .file-node-content
-> .file-node-icon.fa-folder::before {
+#file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-children>.file-tree-node>.file-node-children .file-tree-node>.file-node-content>.file-node-icon.fa-folder::before {
     color: #8F8A83 !important;
 }
 
-#file-library-tree
-.file-tree-node:not(.file-node-root):not(.file-library-file-node):has(.file-library-file-node.active)
-> .file-node-content
-> .file-node-title {
+#file-library-tree .file-tree-node:not(.file-node-root):not(.file-library-file-node):has(.file-library-file-node.active)>.file-node-content>.file-node-title {
     color: var(--claude-folder-expanded-title-color) !important;
 }
 
-#file-library-tree .file-library-node[data-is-directory="true"] > .file-node-content .file-node-icon .fa-folder::before {
+#file-library-tree .file-library-node[data-is-directory="true"]>.file-node-content .file-node-icon .fa-folder::before {
     display: inline-block;
     transform: translateY(0px);
 }
 
 /* 文件夹节点的小三角 */
-#file-library-tree .file-library-node[data-is-directory="true"] > .file-node-content .file-node-open-state i {
+#file-library-tree .file-library-node[data-is-directory="true"]>.file-node-content .file-node-open-state i {
     color: #875d50;
 }
 
 /* 文件节点的图标 */
 
 /* 隐藏原有的默认图标 */
-#file-library-tree .file-library-file-node > .file-node-content .file-node-icon svg,
-#file-library-tree .file-library-file-node > .file-node-content .file-node-icon i,
-#file-library-tree .file-library-file-node > .file-node-content .file-node-icon::before {
+#file-library-tree .file-library-file-node>.file-node-content .file-node-icon svg,
+#file-library-tree .file-library-file-node>.file-node-content .file-node-icon i,
+#file-library-tree .file-library-file-node>.file-node-content .file-node-icon::before {
     display: none !important;
     content: none !important;
 }
 
 /* 改造原图标的包裹容器 */
-#file-library-tree .file-library-file-node > .file-node-content .file-node-icon {
+#file-library-tree .file-library-file-node>.file-node-content .file-node-icon {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -2163,7 +2140,7 @@ a:hover {
 }
 
 /* 绘制实心圆点与朦胧光晕 */
-#file-library-tree .file-library-file-node > .file-node-content .file-node-icon::after {
+#file-library-tree .file-library-file-node>.file-node-content .file-node-icon::after {
     content: '';
     display: block;
     width: 6px;
@@ -2405,7 +2382,7 @@ a:hover {
    ========================================= */
 
 #outline-content:empty::after {
-    content: "没有大纲哦~"!important;
+    content: "没有大纲哦~" !important;
     display: block;
     padding: 16px 12px;
     color: rgba(48, 48, 46, 0.45);
@@ -2531,7 +2508,7 @@ a:hover {
 }
 
 /* 顶级第一个节点的连接线起点归零 */
-.outline-content > li:first-of-type::before {
+.outline-content>li:first-of-type::before {
     top: 0;
 }
 
@@ -2562,7 +2539,7 @@ a:hover {
 }
 
 /* 展开/折叠的小三角图标 */
-.outline-item > .outline-expander {
+.outline-item>.outline-expander {
     display: block;
     float: left;
     width: auto;
@@ -2571,7 +2548,7 @@ a:hover {
     padding-left: 0;
 }
 
-.outline-item > .outline-expander:before {
+.outline-item>.outline-expander:before {
     margin-top: 10px;
     margin-left: -2px;
     background: transparent;
@@ -2605,17 +2582,17 @@ a:hover {
 }
 
 /* 节点处于展开状态时，标题文字的缩进微调 */
-.outline-item-open > .outline-item > .outline-label {
+.outline-item-open>.outline-item>.outline-label {
     padding-left: 11px;
 }
 
 /* 非折叠模式下，展开节点的标题文字缩进归零 */
-.no-collapse-outline .outline-item-open > .outline-item > .outline-label {
+.no-collapse-outline .outline-item-open>.outline-item>.outline-label {
     padding-left: 0 !important;
 }
 
 /* 当前激活节点的缩进微调 */
-.outline-item-open > .outline-item-active > .outline-label {
+.outline-item-open>.outline-item-active>.outline-label {
     padding-left: 12px;
 }
 
@@ -2640,7 +2617,7 @@ a:hover {
 }
 
 /* 顶级第一个节点的树状线特殊处理 (只有下半部分) */
-.outline-content > li:first-of-type > .outline-item::before {
+.outline-content>li:first-of-type>.outline-item::before {
     top: calc(50% - 1px);
     height: calc(50% + 15px);
     border-left: 1px solid var(--LOGO-color);
@@ -2651,33 +2628,33 @@ a:hover {
 }
 
 /* 子节点中的首个节点，以及顶级第二个节点的连线高度微调 */
-.outline-children > li:first-child > .outline-item::before,
-.outline-content > li:nth-child(2) > .outline-item::before {
+.outline-children>li:first-child>.outline-item::before,
+.outline-content>li:nth-child(2)>.outline-item::before {
     top: -11px;
     height: calc(50% + 12px);
 }
 
-.os-windows .outline-children > li:first-child > .outline-item::before,
-.os-windows .outline-content > li:nth-child(2) > .outline-item::before {
+.os-windows .outline-children>li:first-child>.outline-item::before,
+.os-windows .outline-content>li:nth-child(2)>.outline-item::before {
     top: -13px;
     height: calc(50% + 13px);
 }
 
-.no-collapse-outline .outline-children > li:first-child > .outline-item::before,
-.no-collapse-outline .outline-content > li:nth-child(2) > .outline-item::before {
+.no-collapse-outline .outline-children>li:first-child>.outline-item::before,
+.no-collapse-outline .outline-content>li:nth-child(2)>.outline-item::before {
     top: -8px;
     height: calc(50% + 8px);
 }
 
 /* 列表最后项的连线左下角增加微小圆角 */
-.outline-content > li:last-child > .outline-item::before,
-.outline-children > li:last-child > .outline-item::before {
+.outline-content>li:last-child>.outline-item::before,
+.outline-children>li:last-child>.outline-item::before {
     border-bottom-left-radius: 3px;
 }
 
 /* 画出贯穿父节点下属所有子节点的垂直主干线 (I型线) */
-.no-collapse-outline .outline-item-wrapper > .outline-children::before,
-.outline-item-open > .outline-children::before {
+.no-collapse-outline .outline-item-wrapper>.outline-children::before,
+.outline-item-open>.outline-children::before {
     content: '';
     position: absolute;
     left: -21px;
@@ -2688,76 +2665,76 @@ a:hover {
     border-left: 1px solid var(--LOGO-color);
 }
 
-.no-collapse-outline .outline-item-wrapper > .outline-children::before {
+.no-collapse-outline .outline-item-wrapper>.outline-children::before {
     left: -24px;
 }
 
 /* 针对第一个顶层节点的主干线起始点微调 */
-.no-collapse-outline .outline-content > li.outline-item-wrapper:first-child > .outline-children::before,
-.outline-content > li.outline-item-open:first-child > .outline-children::before {
+.no-collapse-outline .outline-content>li.outline-item-wrapper:first-child>.outline-children::before,
+.outline-content>li.outline-item-open:first-child>.outline-children::before {
     top: -15px;
 }
 
 /* 隐藏部分不需要的连线 */
-.outline-content > li:only-of-type > .outline-item::before,
-.no-collapse-outline .outline-item-wrapper:last-of-type > .outline-children::before,
-.no-collapse-outline .outline-children > li.outline-item-wrapper:last-child > .outline-children::before,
-.outline-item-open:last-of-type > .outline-children::before,
-.outline-children > li.outline-item-open:last-child > .outline-children::before {
+.outline-content>li:only-of-type>.outline-item::before,
+.no-collapse-outline .outline-item-wrapper:last-of-type>.outline-children::before,
+.no-collapse-outline .outline-children>li.outline-item-wrapper:last-child>.outline-children::before,
+.outline-item-open:last-of-type>.outline-children::before,
+.outline-children>li.outline-item-open:last-child>.outline-children::before {
     display: none;
 }
 
 /* 如果大纲只有一个顶级节点，整体向左微调 */
-.outline-content > li:only-of-type {
+.outline-content>li:only-of-type {
     margin-left: -8px;
 }
 
 /* ----- 悬停与激活状态下的动态效果 ----- */
 
 /* 节点处于激活状态时，缩短水平线 */
-li > .outline-item-active:before,
-.outline-item-active > .outline-item::before {
+li>.outline-item-active:before,
+.outline-item-active>.outline-item::before {
     width: 7px !important;
 }
 
 /* 激活节点向右移动并增加左内边距 */
-li > .outline-item-active,
-.outline-item-active > .outline-item {
+li>.outline-item-active,
+.outline-item-active>.outline-item {
     margin-left: 4px !important;
     padding-left: 7px !important;
 }
 
 /* 调整激活节点水平连接线的位置保持相连 */
-li > .outline-item-active::before,
-.outline-item-active > .outline-item::before {
+li>.outline-item-active::before,
+.outline-item-active>.outline-item::before {
     left: -7px !important;
 }
 
 /* 悬停时只改变标题文字颜色，激活节点仍保留高亮 */
 .outline-item:hover,
-.outline-item:hover > .outline-label {
+.outline-item:hover>.outline-label {
     background: transparent !important;
     background-color: transparent !important;
 }
 
-.outline-item:hover > .outline-label {
+.outline-item:hover>.outline-label {
     color: #D97757 !important;
     text-decoration: none !important;
 }
 
 .outline-item-active,
-.outline-item-active > .outline-label,
+.outline-item-active>.outline-label,
 .outline-item-active:hover,
-.outline-item-active:hover > .outline-label,
-.outline-item-active > .outline-item:hover,
-.outline-item-active > .outline-item:hover > .outline-label {
+.outline-item-active:hover>.outline-label,
+.outline-item-active>.outline-item:hover,
+.outline-item-active>.outline-item:hover>.outline-label {
     background: var(--hover-color) !important;
 }
 
-.outline-item-active > .outline-label,
-.outline-item-active:hover > .outline-label,
-.outline-item-active > .outline-item > .outline-label,
-.outline-item-active > .outline-item:hover > .outline-label {
+.outline-item-active>.outline-label,
+.outline-item-active:hover>.outline-label,
+.outline-item-active>.outline-item>.outline-label,
+.outline-item-active>.outline-item:hover>.outline-label {
     color: #D97757 !important;
 }
 
@@ -2770,7 +2747,7 @@ li > .outline-item-active::before,
 }
 
 /* 取消原有的层级缩进 */
-.ty-on-outline-filter .outline-content > li > ul,
+.ty-on-outline-filter .outline-content>li>ul,
 .ty-on-outline-filter .outline-content .outline-item {
     margin-left: 0;
 }
@@ -2797,7 +2774,7 @@ li > .outline-item-active::before,
 }
 
 /* 搜索命中项的标题文字内边距加宽 */
-.outline-content li:has(.ty-outline-hit) .outline-item > .outline-label {
+.outline-content li:has(.ty-outline-hit) .outline-item>.outline-label {
     padding: 8px 10px !important;
 }
 
@@ -2959,6 +2936,7 @@ li > .outline-item-active::before,
    ========================================= */
 
 @media print {
+
     /* ---------- 行内样式：覆盖 Typora 默认 mark/u 打印样式，保留主题的波浪高亮和下划线 ---------- */
     mark,
     #write mark,
@@ -3009,24 +2987,24 @@ li > .outline-item-active::before,
         margin-bottom: 0.25rem;
     }
 
-    #write li > p,
-    .write li > p {
+    #write li>p,
+    .write li>p {
         padding: 0;
         margin: 0;
     }
 
-    #write > ul,
-    #write > ol,
-    .write > ul,
-    .write > ol {
+    #write>ul,
+    #write>ol,
+    .write>ul,
+    .write>ol {
         padding: 0 2rem;
         margin: 0 0 0.75rem 0;
     }
 
-    #write > ul ul,
-    #write > ol ol,
-    .write > ul ul,
-    .write > ol ol {
+    #write>ul ul,
+    #write>ol ol,
+    .write>ul ul,
+    .write>ol ol {
         padding: 0 2rem 0.25rem 2rem;
         margin: 0.25rem 0 0 0;
     }
@@ -3087,12 +3065,15 @@ li > .outline-item-active::before,
         print-color-adjust: exact;
     }
 
-    p, li {
+    p,
+    li {
         widows: 2;
         orphans: 2;
     }
 
-    figure, pre, blockquote {
+    figure,
+    pre,
+    blockquote {
         break-inside: avoid;
         page-break-inside: avoid;
     }
@@ -3179,7 +3160,7 @@ li > .outline-item-active::before,
     isolation: isolate;
 }
 
-.unibody-window:not(.megamenu-opened) #top-titlebar > * {
+.unibody-window:not(.megamenu-opened) #top-titlebar>* {
     position: relative;
     z-index: 2;
 }
@@ -3193,12 +3174,10 @@ li > .outline-item-active::before,
     bottom: -20px;
     pointer-events: none;
     background:
-        linear-gradient(
-            to bottom,
+        linear-gradient(to bottom,
             rgba(250, 249, 245, 1) 0%,
             rgba(250, 249, 245, 1) 65%,
-            rgba(250, 249, 245, 0) 100%
-        );
+            rgba(250, 249, 245, 0) 100%);
     filter: blur(4px);
     transform: translateZ(0);
     z-index: 1;
@@ -3235,7 +3214,8 @@ li > .outline-item-active::before,
 }
 
 .megamenu-opened header {
-    background-image: none!important;;
+    background-image: none !important;
+    ;
 }
 
 .unibody-window {
@@ -3283,7 +3263,7 @@ li > .outline-item-active::before,
 /* 返回箭头 */
 
 .unibody-window #megamenu-back-btn {
-    display: none!important;
+    display: none !important;
     /* margin-left: 10px;
     border: none!important;
     color: var(--font-color) !important; */
@@ -3307,18 +3287,18 @@ li > .outline-item-active::before,
     box-shadow: none !important;
 }
 
-.unibody-window #megamenu-menu-list > li {
+.unibody-window #megamenu-menu-list>li {
     margin-top: 6px;
 }
 
-.unibody-window #megamenu-menu-list > li.divider {
+.unibody-window #megamenu-menu-list>li.divider {
     height: 1px;
     margin: 10px 8px;
     border: none !important;
     background: linear-gradient(90deg, transparent, var(--claude-mega-border), transparent) !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a {
+.unibody-window #megamenu-menu-list>li>a {
     min-height: 36px;
     display: flex !important;
     align-items: center;
@@ -3330,7 +3310,7 @@ li > .outline-item-active::before,
     line-height: 36px !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a .fa {
+.unibody-window #megamenu-menu-list>li>a .fa {
     width: 19px;
     margin: 0 12px 0 0;
     opacity: 1;
@@ -3340,9 +3320,9 @@ li > .outline-item-active::before,
     text-align: left;
 }
 
-.unibody-window #megamenu-menu-list > li > a:hover,
-.unibody-window #megamenu-menu-list > li > a.active,
-.unibody-window #megamenu-menu-list > li > a.active:hover {
+.unibody-window #megamenu-menu-list>li>a:hover,
+.unibody-window #megamenu-menu-list>li>a.active,
+.unibody-window #megamenu-menu-list>li>a.active:hover {
     border-color: var(--LOGO-color) !important;
     background:
         linear-gradient(90deg, var(--claude-mega-accent-soft), transparent 86%),
@@ -3350,8 +3330,8 @@ li > .outline-item-active::before,
     color: var(--font-color) !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a:hover .fa,
-.unibody-window #megamenu-menu-list > li > a.active .fa {
+.unibody-window #megamenu-menu-list>li>a:hover .fa,
+.unibody-window #megamenu-menu-list>li>a.active .fa {
     color: var(--LOGO-color) !important;
 }
 
@@ -3388,13 +3368,15 @@ li > .outline-item-active::before,
     cursor: default!important;
 } */
 #recent-document-table {
-    cursor: default!important;
+    cursor: default !important;
 }
+
 .recent-file-dir {
-    cursor: default!important;
+    cursor: default !important;
 }
+
 .recent-file-name {
-    cursor: pointer!important;
+    cursor: pointer !important;
 }
 
 .unibody-window .megamenu-menu-panel {
@@ -3624,7 +3606,7 @@ li > .outline-item-active::before,
 }
 
 .unibody-window .uni-preference-panel {
-    top: 0!important;
+    top: 0 !important;
 }
 
 @media (max-width: 1440px) {
@@ -3678,7 +3660,7 @@ li > .outline-item-active::before,
     font-family: var(--claude-mega-font) !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a {
+.unibody-window #megamenu-menu-list>li>a {
     background-size: 180% 100% !important;
     background-position: 0 50% !important;
     transition:
@@ -3690,9 +3672,9 @@ li > .outline-item-active::before,
         transform 0.18s ease !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a:hover,
-.unibody-window #megamenu-menu-list > li > a.active,
-.unibody-window #megamenu-menu-list > li > a.active:hover {
+.unibody-window #megamenu-menu-list>li>a:hover,
+.unibody-window #megamenu-menu-list>li>a.active,
+.unibody-window #megamenu-menu-list>li>a.active:hover {
     border-color: var(--claude-mega-border) !important;
     background: var(--claude-mega-slider-bg) !important;
     background-size: 180% 100% !important;
@@ -3701,7 +3683,7 @@ li > .outline-item-active::before,
     box-shadow: var(--claude-mega-slider-shadow) !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a:hover {
+.unibody-window #megamenu-menu-list>li>a:hover {
     transform: translateX(2px);
 }
 
@@ -3722,7 +3704,7 @@ li > .outline-item-active::before,
     color: var(--font-color) !important;
     transform: translateY(-1px);
     box-shadow: 0 10px 24px -20px rgba(31, 30, 29, 0.36) !important;
-    border-color: transparent!important;
+    border-color: transparent !important;
 }
 
 .unibody-window #megamenu-section-open .long-btn:hover span,
@@ -3776,7 +3758,7 @@ li > .outline-item-active::before,
         rgba(246, 246, 239, 0.64);
 }
 
-.unibody-window #megamenu-menu-list > li > a {
+.unibody-window #megamenu-menu-list>li>a {
     position: relative;
     overflow: hidden;
     isolation: isolate;
@@ -3788,7 +3770,7 @@ li > .outline-item-active::before,
         transform 0.22s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a::before {
+.unibody-window #megamenu-menu-list>li>a::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -3804,56 +3786,56 @@ li > .outline-item-active::before,
         transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.unibody-window #megamenu-menu-list > li > a:hover,
-.unibody-window #megamenu-menu-list > li > a.active,
-.unibody-window #megamenu-menu-list > li > a.active:hover {
+.unibody-window #megamenu-menu-list>li>a:hover,
+.unibody-window #megamenu-menu-list>li>a.active,
+.unibody-window #megamenu-menu-list>li>a.active:hover {
     background: transparent !important;
     box-shadow: none !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a:hover::before,
-.unibody-window #megamenu-menu-list > li > a.active::before,
-.unibody-window #megamenu-menu-list > li > a.active:hover::before {
+.unibody-window #megamenu-menu-list>li>a:hover::before,
+.unibody-window #megamenu-menu-list>li>a.active::before,
+.unibody-window #megamenu-menu-list>li>a.active:hover::before {
     opacity: 1;
     transform: scaleX(1);
 }
 
-.unibody-window #megamenu-menu-list > li > a .fa,
-.unibody-window #megamenu-menu-list > li > a span {
+.unibody-window #megamenu-menu-list>li>a .fa,
+.unibody-window #megamenu-menu-list>li>a span {
     position: relative;
     z-index: 1;
     transition: color 0.2s ease;
 }
 
 /* --- 一体化菜单交互收敛：非激活项悬浮只保留文字动画 --- */
-.unibody-window #megamenu-menu-list > li > a span {
+.unibody-window #megamenu-menu-list>li>a span {
     display: inline-block;
     transition:
         color 0.2s ease,
         transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.unibody-window #megamenu-menu-list > li > a:not(.active):hover {
+.unibody-window #megamenu-menu-list>li>a:not(.active):hover {
     border-color: transparent !important;
     background: transparent !important;
     box-shadow: none !important;
     transform: none;
 }
 
-.unibody-window #megamenu-menu-list > li > a:not(.active):hover::before {
+.unibody-window #megamenu-menu-list>li>a:not(.active):hover::before {
     opacity: 0 !important;
     transform: scaleX(0.94) !important;
 }
 
-.unibody-window #megamenu-menu-list > li > a:not(.active):hover span {
+.unibody-window #megamenu-menu-list>li>a:not(.active):hover span {
     transform: translateX(3px);
     color: var(--font-color) !important;
 }
 
-.unibody-window #recent-document-table.table-hover > tbody > tr:hover,
-.unibody-window #recent-document-table.table-hover > tbody > tr:hover > td,
-.unibody-window #recent-document-table tbody > tr.recent-file-item:hover,
-.unibody-window #recent-document-table tbody > tr.recent-file-item:hover > td,
+.unibody-window #recent-document-table.table-hover>tbody>tr:hover,
+.unibody-window #recent-document-table.table-hover>tbody>tr:hover>td,
+.unibody-window #recent-document-table tbody>tr.recent-file-item:hover,
+.unibody-window #recent-document-table tbody>tr.recent-file-item:hover>td,
 .unibody-window #recent-document-table tbody tr:hover,
 .unibody-window #recent-document-table tbody tr:hover td {
     background: transparent !important;
@@ -3893,15 +3875,16 @@ li > .outline-item-active::before,
     border-color: var(--border-color-30);
 }
 
-.code-tooltip .ty-input:focus, input:focus,
+.code-tooltip .ty-input:focus,
+input:focus,
 .form-control:focus {
     border-color: #D97757;
-    box-shadow: none!important;
+    box-shadow: none !important;
 }
 
 #md-searchpanel {
-    color:var(--sidebar-font-color);
-    box-shadow: rgba(0,0,0,.6) 0 0 .5em!important;
+    color: var(--sidebar-font-color);
+    box-shadow: rgba(0, 0, 0, .6) 0 0 .5em !important;
 }
 
 .searchpanel-search-option-btn {
@@ -3914,22 +3897,23 @@ li > .outline-item-active::before,
 }
 
 #md-searchpanel.searchpanel-replace-mode {
-    z-index: 899!important;
+    z-index: 899 !important;
 }
 
 /*2. 文件树计数*/
 .file-node-content:after {
-    background: none!important;
-    border: none!important;
-    color: #8F857C!important;
+    background: none !important;
+    border: none !important;
+    color: #8F857C !important;
 }
+
 /*3. 设置界面配色*/
 .plugin-preferences-mask {
-    --pref-bg-hover:var(--hover-color)!important;
-    --pref-bg-active:var(--LOGO-color)!important;
-    --pref-primary:var(--LOGO-color)!important;
-    --pref-primary-text:var(--LOGO-color)!important;
-    --pref-primary-text:var(--sidebar-font-color)!important;
+    --pref-bg-hover: var(--hover-color) !important;
+    --pref-bg-active: var(--LOGO-color) !important;
+    --pref-primary: var(--LOGO-color) !important;
+    --pref-primary-text: var(--LOGO-color) !important;
+    --pref-primary-text: var(--sidebar-font-color) !important;
 }
 
 /*4. 插件右键菜单*/
@@ -4181,6 +4165,7 @@ body.pin-outline #plugin-window-tab .tab-bar {
 
 
 @media (prefers-reduced-motion: reduce) {
+
     .plugin-common-menu.show,
     #plugin-window-tab .tab-container,
     #plugin-window-tab .active-indicator,
@@ -4212,8 +4197,8 @@ body.pin-outline #plugin-window-tab .tab-bar {
 
 .typora-sourceview-on .CodeMirror-selectedtext,
 .typora-sourceview-on .CodeMirror-line::selection,
-.typora-sourceview-on .CodeMirror-line > span::selection,
-.typora-sourceview-on .CodeMirror-line > span > span::selection {
+.typora-sourceview-on .CodeMirror-line>span::selection,
+.typora-sourceview-on .CodeMirror-line>span>span::selection {
     background: transparent !important;
     text-shadow: none !important;
 }
@@ -4222,13 +4207,15 @@ body.pin-outline #plugin-window-tab .tab-bar {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
-.cm-s-typora-default .cm-header, .cm-s-typora-default .cm-property {
-    color:#D97757;
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+    color: #D97757;
 }
 
 .cm-s-typora-default .cm-header1:not(.cm-atom):not(.cm-s-inner) {
