@@ -1089,6 +1089,10 @@ hr {
     text-align: left !important;
 }
 
+.CodeMirror-gutters {
+    border:none!important;
+}
+
 /* ----- 语法高亮映射配置（不用变量） ----- */
 
 .md-fences .CodeMirror-linenumber,

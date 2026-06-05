@@ -1007,6 +1007,10 @@ hr {
     margin: 0 auto;
 }
 
+.CodeMirror-gutters {
+    border:none!important;
+}
+
 /*--- Code lines ---*/
 .CodeMirror-lines {
     font-size: 0.875rem;
