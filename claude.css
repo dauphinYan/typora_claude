@@ -137,7 +137,7 @@ table {
     --border-color-30: #1f1e1d4d;
     --sidebar-font-color: #3d3d3a;
     --button-bg-color: #e8e6dc;
-    --bg-color-dark:#262624;
+    --bg-color-dark: #262624;
 
     /* color-search */
     --file-search-list-font-color: #3d3d3a;
@@ -168,7 +168,7 @@ table {
     --code-bg-color: #3d3d3a0d;
     --code-font-color: #8a2424;
     --code-border: #1f1e1d26;
-    
+
     /* Blockquote */
     --quote-font-color: #3d3d3a;
     --quote-boder: #1f1e1d1a;
@@ -185,7 +185,7 @@ table {
     --box-shadow-userinput: 0 18px 48px -28px rgb(31 30 29 / 32%), 0 8px 18px -14px rgb(31 30 29 / 18%), 0 0 0 0.5px hsla(var(--border-300) / 0.18);
     --box-shadow-userinput-hover: 0 22px 58px -30px rgb(31 30 29 / 38%), 0 10px 22px -15px rgb(31 30 29 / 22%), 0 0 0 0.5px hsla(var(--border-200) / 0.28);
     --box-shadow-userinput-focus: 0 24px 64px -28px rgb(31 30 29 / 44%), 0 12px 26px -14px rgb(31 30 29 / 24%), 0 0 0 0.5px hsla(var(--border-200) / 0.32);
-    
+
     /*--- Font ---*/
     --font-serif: "Anthropic Serif Web Text", Georgia, "Times New Roman", "Noto Serif SC";
     --font-sans: "Anthropic Sans Web Text", "Noto Sans SC", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -244,6 +244,7 @@ body {
     margin: 0 !important;
     opacity: 0 !important;
 }
+
 #write .md-pair-s.md-expand {
     padding: 0 !important;
 }
@@ -410,9 +411,11 @@ body {
 .dropdown-menu .menu-style-btn .ty-icon {
     color: rgba(20, 20, 19, 0.62);
 }
+
 .dropdown-menu .menu-style-btn:hover .ty-icon {
     color: var(--font-color);
 }
+
 .dropdown-menu .menu-style-btn.disabled .ty-icon {
     color: rgba(20, 20, 19, 0.28);
 }
@@ -1478,6 +1481,7 @@ mjx-container {
 .md-math-block:hover .md-math-container {
     background-color: var(--hover-color) !important;
 }
+
 /* 添加一点渐入渐出动画 */
 .md-math-block .md-math-container {
     transition: background-color 0.2s ease-in-out !important;
@@ -1725,12 +1729,6 @@ mjx-container {
    侧边栏
    ========================================= */
 
-/* 去除展开侧边栏和开启源码模式的按钮的背景 */
-.footer-item:hover,
-.sidebar-footer-item:hover {
-    background: transparent;
-}
-
 /* 去除侧边栏拖拽区背景 */
 #typora-sidebar-resizer:not(.dragging) .typora-sidebar-resizer-bar:hover {
     background: none !important;
@@ -1790,6 +1788,13 @@ mjx-container {
 }
 
 /* ---------- 底栏 ---------- */
+
+/* 去除底栏按钮的hover背景并开启源码模式等按钮的图标hover背景 */
+.footer-item:hover,
+.sidebar-footer-item:hover {
+    background: transparent;
+    color: var(--LOGO-color) !important;
+}
 
 .ty-add:before {
     color: #1f1e1d80;
@@ -2103,17 +2108,28 @@ mjx-container {
     margin-right: 6.5px;
 }
 
+/* 文件夹空闲状态时的图标 */
+.file-library-node[data-has-sub="false"][data-is-directory="true"]>.file-node-content>.file-node-icon.fa-folder:before {
+    content: "\f114";
+    opacity: 0.5;
+}
+
+/* 文件夹图标 */
+.file-node-icon.fa-folder::before {
+    content: "\f114";
+}
+
+/* 已展开的文件夹图标 */
+.file-node-expanded>.file-node-content>.file-node-icon.fa-folder::before {
+    content: "\f115";
+}
+
 /* 隐藏md后缀 */
 .file-node-title-ext-part {
     display: none;
 }
 
-/* 文件夹空闲状态时的图标 */
-.file-library-node[data-has-sub="false"][data-is-directory="true"]>.file-node-content>.file-node-icon.fa-folder:before {
-    content: "\f114";
-}
-
-/* 移除小三角 */
+/* 移除文件夹左边的小三角 */
 .file-node-open-state {
     display: none !important;
 }
@@ -2265,7 +2281,8 @@ mjx-container {
 
 /* 文件树节点激活项的字体颜色 */
 .file-library-node.file-tree-node.file-library-file-node.active .file-node-title {
-    color: #D97757 !important;
+    /* color: #D97757 !important; */
+    font-weight: 500 !important;
 }
 
 @font-face {
@@ -2291,7 +2308,7 @@ mjx-container {
     padding-top: 10px;
 }
 
-/* --- 节点图标 --- */
+/* --- 节点标题及图标 --- */
 
 #file-library-tree>.file-tree-node.file-node-root>.file-node-children>.file-tree-node {
     --claude-folder-expanded-title-color: #D97757;
@@ -2328,18 +2345,22 @@ mjx-container {
     color: #8F8A83 !important;
 }
 
-#file-library-tree .file-tree-node:not(.file-node-root):not(.file-library-file-node):has(.file-library-file-node.active)>.file-node-content>.file-node-title {
-    color: var(--claude-folder-expanded-title-color) !important;
+#file-library-tree .file-tree-node:not(.file-node-root):not(.file-library-file-node):has(.file-library-file-node.active)>.file-node-content>.file-node-title::after {
+    content: "\2B98";
+    display: inline-block;
+    color: var(--LOGO-color);
+    margin-left: 8px;
+    font-size: 13px;
+    line-height: 0;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    opacity: 0.85;
 }
 
 #file-library-tree .file-library-node[data-is-directory="true"]>.file-node-content .file-node-icon .fa-folder::before {
     display: inline-block;
     transform: translateY(0px);
-}
-
-/* 文件夹节点的小三角 */
-#file-library-tree .file-library-node[data-is-directory="true"]>.file-node-content .file-node-open-state i {
-    color: #875d50;
 }
 
 /* 文件节点的图标 */
@@ -3777,11 +3798,43 @@ li>.outline-item-active::before,
    Plugin
    ========================================= */
 
-/*1. 插件按钮与查找替换*/
+/*1. 插件按钮*/
 #plugin-action-buttons .action-item {
     color: var(--sidebar-font-color) !important;
-    border-color: var(--border-color-15) !important;
-    border-width: 0.5px !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+    border: 0.5px solid rgba(31, 30, 29, 0.12) !important;
+    border-radius: 6px !important;
+    box-shadow:
+        0 4px 12px -4px rgba(31, 30, 29, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(8px);
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s cubic-bezier(0.22, 1, 0.36, 1) !important;
+
+    cursor: default !important;
+}
+
+#plugin-action-buttons .action-item:hover {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-color: rgba(31, 30, 29, 0.18) !important;
+    color: var(--LOGO-color) !important;
+    transform: scale(1) translateY(0) !important;
+    box-shadow:
+        0 5px 14px -4px rgba(31, 30, 29, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+#plugin-action-buttons .action-item:active {
+    background: rgba(240, 239, 235, 0.85) !important;
+    box-shadow:
+        0 1px 3px -1px rgba(31, 30, 29, 0.08),
+        inset 0 1px 2px rgba(31, 30, 29, 0.04) !important;
+    transform: scale(0.99) !important;
+    transition-duration: 0.05s !important;
 }
 
 /*2. 文件树计数*/
@@ -4065,9 +4118,10 @@ body.pin-outline #plugin-window-tab .tab-bar {
    源码模式
    ========================================= */
 
-/* 切换源码模式按钮的背景 */
+/* 关闭源码模式按钮的背景 */
 .typora-sourceview-on #toggle-sourceview-btn {
     background: transparent !important;
+    color: #d95575 !important;
 }
 
 /* 源码模式激活行背景 */
